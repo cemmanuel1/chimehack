@@ -1,0 +1,16 @@
+
+<% if @women %>
+	<div class="row">
+		<div class="col-xs-12 col-sm-4 text-center">
+		<script type="text/javascript" src='//www.google.com/trends/embed.js?hl=en-US&q=<%=escape_javascript @profile.first_name %>+<%=escape_javascript @women.last_name %>&content=1&cid=GEO_MAP_0_0&export=5&w=500&h=530'></script>
+	</div>
+  <div class="col-xs-12 col-sm-4 text-center">
+		<h2>Search Interest Since 2014</h2>
+		<script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=<%=escape_javascript @profile.first_name %>+<%=escape_javascript @women.last_name %>&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=500&h=330"></script>
+	</div>
+		<div class="col-xs-12 col-sm-4 text-center">
+		<h2>Top Since 2014</h2>
+		 <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=<%=escape_javascript @profile.first_name %>+<%=escape_javascript @women.last_name %>&content=1&cid=TOP_QUERIES_0_0&export=5&w=300&h=420"></script>
+		</div>
+	</div>
+<% end %>
