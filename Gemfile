@@ -8,7 +8,7 @@ gem 'json'
 gem 'twitter'
 gem 'activeadmin'
 gem 'sunspot_rails'
-
+gem 'devise'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
