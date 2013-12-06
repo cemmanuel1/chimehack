@@ -2,16 +2,25 @@
 <html>
 <head>
   <title>Chimehack</title>
+   <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	 <%= render "/layouts/nav" %>
+	<div class="container">
+		<% if notice %>
+			<p class="notice"><%= notice %></p>
+		<% end %>
+		<% if alert %>
+			<p class="alert"><%= alert %></p>
+		<% end %>
 
-<%= yield %>
-
+		<%= render "/layouts/nav" %>
+		<%= yield %>
+	</div>
 </body>
 </html>
