@@ -219,6 +219,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (= 2.1)
   coffee-rails (= 3.2.2)
+  devise
   faker
   jquery-rails (= 2.0.2)
   json
