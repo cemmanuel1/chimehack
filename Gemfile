@@ -8,6 +8,8 @@ gem 'json'
 gem 'twitter'
 gem 'activeadmin'
 gem 'sunspot_rails'
+gem  "wikipedia-client"
+
 
 group :development do
   gem 'better_errors'
