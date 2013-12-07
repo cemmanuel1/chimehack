@@ -8,6 +8,8 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :facebook
       t.string :quote
       t.string :personal_site
+      t.belongs_to :category
+      t.belongs_to :user
 
       t.timestamps
     end
