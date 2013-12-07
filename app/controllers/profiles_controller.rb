@@ -7,7 +7,8 @@ class ProfilesController < InheritedResources::Base
 
   def show
     @profile = Profile.find(params[:id])
-    @news = Profile.fetch_news(@profile.firstname, @profile.lastname)
+    @news = @profile.fetch_news
+    # @twitter = Profile.fetch_tweets
   end
 
   def new

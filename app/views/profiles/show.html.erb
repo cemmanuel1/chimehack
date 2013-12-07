@@ -32,7 +32,7 @@
 
 <p>
   <b>Facebook:</b>
-  <%= @profile.facebook %>
+   <%= link_to "@" + @profile.firstname + @profile.lastname, "http://twitter.com/#{@profile.firstname}#{@profile.lastname}" %>
 </p>
 
 <p>
@@ -46,6 +46,12 @@
 </p>
 
 
+<h5>Tweets</h5>
+<ul>
+  <% @profile.tweets[0..4].each do |tweet| %>
+   <li><%= tweet.text %></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 
