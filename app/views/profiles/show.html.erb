@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
 <p>
   <b>Name:</b>
   <%= @profile.firstname %> <%= @profile.lastname %>
@@ -31,12 +30,10 @@
 
 <p>
   <b>Twitter:</b>
-  <%= link_to "@" + @profile.firstname + @profile.lastname, "http://twitter.com/#{@profile.firstname}#{@profile.lastname}" %>
-</p>
-
+  <%= link_to image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/twitter-icon.png"), "https://twitter.com/intent/follow?screen_name=#{@profile.firstname}#{@profile.lastname}" %>
 <p>
   <b>Facebook:</b>
-   <%= link_to "@" + @profile.firstname + @profile.lastname, "http://twitter.com/#{@profile.firstname}#{@profile.lastname}" %>
+   <%= image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/facebook-icon.png") %>
 </p>
 
 <p>

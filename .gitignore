@@ -9,4 +9,4 @@ doc/
 *~
 .project
 .DS_Store
-
+ solr/data

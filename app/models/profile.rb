@@ -7,6 +7,11 @@ class Profile < ActiveRecord::Base
   belongs_to :category
   mount_uploader :image, ImageUploader
 
+  searchable do
+    text :firstname
+    text :lastname
+  end
+
   def full_name
     firstname + " " + lastname
   end
