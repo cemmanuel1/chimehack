@@ -11,13 +11,9 @@
                 Categories <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to "STEM"  %></li>
-                <li><%= link_to "Non-Profit" %></li>
-                <li><%= link_to "Activists" %></li>
-                <li><%= link_to "Health" %></li>
-                <li><%= link_to "Government" %></li>
-                <li><%= link_to "Trailblazers" %></li>
-                <li><%= link_to "Publishing" %></li>         
+                <% @category.each do |category| %>
+                  <li><%= link_to "#{category.name}", category_path("#{category.id}")  %></li> 
+                <% end %>     
               </ul> 
             </li>    
           <li><p class="navbar-text pull-right">

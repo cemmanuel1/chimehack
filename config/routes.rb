@@ -1,6 +1,6 @@
 Chimehack::Application.routes.draw do
   resources :profiles
-
+  resources :categories
 
   # devise_for :users
   devise_for :users
