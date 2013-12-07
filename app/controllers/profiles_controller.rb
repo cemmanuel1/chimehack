@@ -2,7 +2,11 @@ class ProfilesController < InheritedResources::Base
 
 
   def index
-    @profiles = Profile.all
+  @search = Sunspot.search(Profile) do
+      fulltext params[:search]
+    end
+    @profiles = @search.results
+    # @profiles = Profile.all
   end
 
   def show
