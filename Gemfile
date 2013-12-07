@@ -12,6 +12,7 @@ gem 'sunspot_rails'
 gem  "wikipedia-client"
 gem 'devise'
 gem 'twitter'
+gem  'truncate_html'
 
 group :development do
   gem 'better_errors'
