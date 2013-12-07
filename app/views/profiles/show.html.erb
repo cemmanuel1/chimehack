@@ -10,7 +10,9 @@
 <p>
   <b>Image:</b>
     <% if @profile.img%>
- <%= image_tag(@profile.img, id: "prof_img")  %>
+     <%= image_tag(@profile.img, id: "prof_img")  %>
+     <% else %>
+     <%= image_tag(@profile.image_url(:thumb).to_s)  %>
  <% end %>
 </p>
 
