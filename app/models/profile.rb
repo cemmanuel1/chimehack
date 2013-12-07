@@ -4,14 +4,18 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
-  def fetch_wiki(firstname, lastname)
-    JSON.parse(RestClient.get('http://en.wikipedia.org/w/api.php', params: {action: 'query', format: "json", prop: "extracts", exintro: true, titles: firstname + " " + lastname} ))
+  def full_name
+    firstname + " " + lastname
+  end
+
+  def fetch_wiki
+    JSON.parse(RestClient.get('http://en.wikipedia.org/w/api.php', params: {action: 'query', format: "json", prop: "extracts", exintro: true, titles: full_name } ))
   end
 
   def self.make_bio
     profiles = Profile.all
     profiles.each do |profile|
-      wiki = profile.fetch_wiki(profile.firstname, profile.lastname)
+      wiki = profile.fetch_wiki
       wiki_page_id = wiki["query"]["pages"].first[0]
       profile.update_attributes(bio:  wiki["query"]["pages"][wiki_page_id]["extract"])
       profile.save!
@@ -19,8 +23,21 @@ class Profile < ActiveRecord::Base
   end
 
 
-  def self.fetch_news(firstname,lastname)
-    JSON.parse(RestClient.get('http://content.guardianapis.com/search', params: { q: firstname + " " + lastname, key: 'dk3gqxdpr3g3hsbya3gg8p3h'} ))
+  def fetch_news
+    JSON.parse(RestClient.get('http://content.guardianapis.com/search', params: { q: full_name, key: 'dk3gqxdpr3g3hsbya3gg8p3h'} ))
+  end
+
+  def self.client
+    @client ||= Twitter::REST::Client.new do |config|
+      config.consumer_key        = "YST0duS57ja9NGqZ8rzSQ"
+      config.consumer_secret     = "cklYumf1nRv9jlhNJrSImD9IlGDXNBHCwMdVSaonink"
+      config.access_token        = "72498265-neZHxQUaplTUdigLe4IGbhO8QeSCMQ2qpfVLWYxib"
+      config.access_token_secret = "3eI6OPcEiuFhkjWxxVdocjemSIAFMbt1MAxZRNtETpQbm"
+    end
+  end
+
+  def tweets
+    self.class.client.user_timeline(firstname + lastname)
   end
 
 end
