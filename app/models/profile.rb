@@ -1,7 +1,7 @@
 require 'wikipedia'
 
 class Profile < ActiveRecord::Base
-# before_save :format_values
+before_save :format_values
 
   attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category, :category_id, :img, :image, :video
   belongs_to :user
