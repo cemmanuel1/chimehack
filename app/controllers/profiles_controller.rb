@@ -7,6 +7,7 @@ class ProfilesController < InheritedResources::Base
 
 	def show
 		@profile = Profile.find(params[:id])
+
 	end
 
 
