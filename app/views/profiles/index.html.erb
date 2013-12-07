@@ -9,7 +9,9 @@
 
   <tr>
     <td><%= link_to image_tag(profile.img, id: "prof_img"),profile_path("#{profile.id}")  %></td>
+    <% if profile.bio%>
     <td><%= profile.bio.html_safe %> </td>
+    <%end%>
   </tr>
 
   <% end %>

@@ -1,20 +1,22 @@
 
-  <h1>Discover Women In <%= @category.name %></h1>
+<h1>Discover Women In <%= @category.name %></h1>
 
-      <table>
-        <tr>
-          <% @profiles.each do |profile| %>
+<table>
+  <tr>
+    <% @profiles.each do |profile| %>
 
-          <th class = "span2"> <%= profile.firstname %> <%= profile.lastname %></th>
-        </tr>
+    <th class = "span2"> <%= profile.firstname %> <%= profile.lastname %></th>
+  </tr>
 
-        <tr>
-          <td><%= link_to image_tag(profile.img, id: "prof_img"),profile_path("#{profile.id}")  %></td>
-          <td><%= profile.bio.html_safe %> </td>
-        </tr>
+  <tr>
+    <td><%= link_to image_tag(profile.img, id: "prof_img"),profile_path("#{profile.id}")  %></td>
+    <% if profile.bio%>
+    <td><%= profile.bio.html_safe %> </td>
+    <%end%>
+  </tr>
 
-        <% end %>
-      </table>
+  <% end %>
+</table>
 
 
 
