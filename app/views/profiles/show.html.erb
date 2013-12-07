@@ -29,6 +29,10 @@
     <% end %>
 </p>
 
+ <% if @profile.video %>
+     <%=  render "/profiles/video"  %>
+ <% end %>
+
 <p>
   <b>Twitter:</b>
   <%= link_to "@" + @profile.firstname + @profile.lastname, "http://twitter.com/#{@profile.firstname}#{@profile.lastname}" %>

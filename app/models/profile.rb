@@ -1,8 +1,9 @@
 require 'wikipedia'
 
 class Profile < ActiveRecord::Base
+  before_save :format_values
 
-  attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category, :category_id, :img, :image
+  attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category, :category_id, :img, :image, :video
   belongs_to :user
   belongs_to :category
   mount_uploader :image, ImageUploader
@@ -50,6 +51,12 @@ class Profile < ActiveRecord::Base
 
   def tweets
     self.class.client.user_timeline(firstname + lastname)
+  end
+
+  private
+
+  def format_values 
+     self.video = self.video[/v=([^&]+)/, 1]
   end
 
 end
