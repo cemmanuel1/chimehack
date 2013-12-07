@@ -8,4 +8,9 @@ class Profile < ActiveRecord::Base
     JSON.parse(RestClient.get('http://content.guardianapis.com/search', params: { q: 'Sandberg',key: 'dk3gqxdpr3g3hsbya3gg8p3h'} ))
   end
 
+  def get_news
+    # @profile.contact_name
+    # Profile.fetch_news()
+  end
+
 end
