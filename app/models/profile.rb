@@ -4,11 +4,6 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
-
-  def concat_name(firstname,lastname)
-    firstname + " " + lastname
-  end
-
   def fetch_wiki(firstname, lastname)
     JSON.parse(RestClient.get('http://en.wikipedia.org/w/api.php', params: {action: 'query', format: "json", prop: "extracts", exintro: true, titles: firstname + " " + lastname} ))
   end
@@ -22,6 +17,7 @@ class Profile < ActiveRecord::Base
       profile.save!
     end
   end
+
 
   def self.fetch_news(firstname,lastname)
     JSON.parse(RestClient.get('http://content.guardianapis.com/search', params: { q: firstname + " " + lastname, key: 'dk3gqxdpr3g3hsbya3gg8p3h'} ))
