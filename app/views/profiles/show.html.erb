@@ -10,7 +10,9 @@
 <p>
   <b>Image:</b>
     <% if @profile.img%>
- <%= image_tag(@profile.img, id: "prof_img")  %>
+     <%= image_tag(@profile.img, id: "prof_img")  %>
+     <% else %>
+     <%= image_tag(@profile.image_url(:thumb).to_s)  %>
  <% end %>
 </p>
 
@@ -22,8 +24,8 @@
 <p>
   <b>Newsfeed:</b>
   <br>
-    <% 5.times do |i| %>
-      <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
+    <% 4.times do |i| %>
+        <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
     <% end %>
 </p>
 

@@ -118,6 +118,13 @@ aside {
   width:  300px;
 }
 
+.small-image {
+  float: left;
+  display: block;
+  width: 10%;
+  height: 10%;
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -200,3 +207,4 @@ margin-top: 5%;
   margin-top: 45px;
   @include box_sizing;
 }
+

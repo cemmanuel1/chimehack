@@ -33,6 +33,7 @@ group :assets do
   gem "less-rails"
   gem "therubyracer"
   gem 'twitter-bootstrap-rails'
+  gem 'jquery-fileupload-rails'
 end
 
 gem 'jquery-rails', '2.0.2'
@@ -41,3 +42,7 @@ gem 'debugger'
 group :production do
   gem 'pg'
 end
+
+gem 'carrierwave'
+gem "rmagick"
+

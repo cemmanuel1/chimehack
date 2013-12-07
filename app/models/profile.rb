@@ -2,9 +2,10 @@ require 'wikipedia'
 
 class Profile < ActiveRecord::Base
 
-  attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category, :category_id, :img
+  attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category, :category_id, :img, :image
   belongs_to :user
   belongs_to :category
+  mount_uploader :image, ImageUploader
 
   searchable do
     text :firstname
