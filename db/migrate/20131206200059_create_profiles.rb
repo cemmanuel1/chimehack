@@ -9,6 +9,8 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :facebook
       t.string :quote
       t.string :personal_site
+      t.text :video
+      t.boolean :speaking
       t.belongs_to :category
       t.belongs_to :user
 
