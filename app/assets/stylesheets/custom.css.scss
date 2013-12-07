@@ -213,6 +213,12 @@ border: 2px solid;
   @include box_sizing;
 }
 
+.content-wrap{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%
+}
  /* RESPONSIVE CSS
     -------------------------------------------------- */
 
