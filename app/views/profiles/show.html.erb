@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div> <!-- main div -->
-  <div class='row'> <!-- Part 1 -->
+  <div class='row profile'> <!-- Part 1 -->
 
     <div class="span4 thumbnail col-sm-6 col-md-4"> <!-- first box -->
       <div class='caption'>
@@ -12,8 +12,8 @@
          <%= image_tag(@profile.image_url(:thumb).to_s)  %>
      <% end %>
 
-     <%= link_to image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/twitter-icon.png"), "https://twitter.com/intent/follow?screen_name=#{@profile.firstname}#{@profile.lastname}" %>
-      <%= image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/facebook-icon.png") %>
+     <%= link_to image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/32/twitter-icon.png"), "https://twitter.com/intent/follow?screen_name=#{@profile.firstname}#{@profile.lastname}" %>
+      <%= image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/32/facebook-icon.png") %>
   
   </div> <!-- first box -->
   <div class='span8'> <!-- second box -->
@@ -26,17 +26,19 @@
 
   </div> <!-- Part 1 -->
 
-  <div class="row"> <!-- part 2 -->  
+  <div class="row profile"> <!-- part 2 -->  
     <div class='span11'>
-    <b>Newsfeed:</b>
+    <p>Latest news for <%= @profile.firstname %>: </p>
     <br>
       <% 4.times do |i| %>
+       <p class='list-group-item-text'>
           <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
+        </p>
       <% end %>
     </div>
   </div> <!-- part 2 -->  
 
-  <div class='row'><!-- part 3 -->  
+  <div class='row profile'><!-- part 3 -->  
 
     <div class='span4'> <!-- tweets -->
       <h5>Tweets</h5>
@@ -55,7 +57,7 @@
 
   </div> <!-- part 3 -->
   
-  <div class='row'> <!-- part 4 -->   
+  <div class='row profile'> <!-- part 4 -->   
     <div>
     <%= render "/profiles/trend_data" %>
     </div>
