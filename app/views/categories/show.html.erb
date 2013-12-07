@@ -3,17 +3,17 @@
 
 <div class="container-fluid">
   <div class="row-fluid">
-
     <ul class="users">
      <% @profiles.each do |profile| %>
-
+        <div class= "small-image">
+         <p> image-block </p>
+         </div>
 	     	 <div class="page-header"> <%= profile.firstname %><%= profile.lastname %>
 					<small>
-						<%= truncate (profile.bio), :length => 80 %>
+						<%= truncate (profile.bio), :length => 100 %>
 						<%= link_to "more", profile_path(profile.id) %>
 					</small>
 				</div>
-
      <% end %>
     </div>
   </div>
