@@ -14,6 +14,8 @@
    <%= render 'layouts/shim' %>
 </head>
   <body>
+
+    <div class ="container-fluid">
     <!-- follow button for feisbuc -->
     <div id="fb-root"></div>
     <script>(function(d, s, id) { 
@@ -26,7 +28,7 @@
     </script>
 
   	  <%= render 'layouts/nav' %>
-      <div class="container">
+     
          <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
       <% end %>
@@ -34,8 +36,7 @@
       <p class="alert alert-error"><%= alert %></p>
       <% end %>
         <%= yield %>
-
      <%= render 'layouts/footer' %>
-   </div>
+</div>
   </body>
 </html>

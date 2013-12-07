@@ -185,7 +185,6 @@ GEM
       railties (>= 3.2, < 5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rmagick (2.13.2)
     rsolr (1.0.9)
       builder (>= 2.1.2)
     sass (3.2.12)
@@ -264,7 +263,6 @@ DEPENDENCIES
   pry
   rails (= 3.2.14)
   rest-client
-  rmagick
   sass-rails (= 3.2.5)
   sunspot_rails
   sunspot_solr

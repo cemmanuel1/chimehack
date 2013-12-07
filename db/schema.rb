@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20131207184623) do
     t.string   "facebook"
     t.string   "quote"
     t.string   "personal_site"
+    t.text     "video"
+    t.boolean  "speaking"
     t.integer  "category_id"
     t.integer  "user_id"
     t.datetime "created_at",    :null => false
