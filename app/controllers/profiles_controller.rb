@@ -4,11 +4,9 @@ class ProfilesController < InheritedResources::Base
 		@profiles = Profile.all
 	end
 
-
 	def show
 		@profile = Profile.find(params[:id])
 
 	end
-
 
 end
