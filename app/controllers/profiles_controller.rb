@@ -2,6 +2,10 @@ class ProfilesController < InheritedResources::Base
 
 
   def index
+    # @search = Profile.search do
+    #   fulltext params[:search]
+    # end
+    # @profiles = @search.results
     @profiles = Profile.all
   end
 

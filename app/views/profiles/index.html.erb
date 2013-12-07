@@ -1,50 +1,58 @@
 <div class = "container">
     <h1>Listing profiles</h1>
 
-<div class="container-fluid">
-  <div class="row-fluid">
+    <div class="container-fluid">
+      <div class="row-fluid">
 
+       <li>
+        <%= form_tag profiles_path, :method => :get do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+      </p>
+      <% end %>
+  </li>
 
-    <div class="span10">
+  <div class="span10">
       <p>
         Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
         <a href="#">alskdalsdkasd</a>.
         asdkas;dlals;d
         <a href="#">Rhere </a>.
-       </p>
-    </div>
-  </div>
+    </p>
 </div>
-    <table>
-      <tr>
-        <th class = "span2">Name</th>
-        <th>Bio</th>
-        <th>Newsfeed</th>
-        <th>Twitter</th>
-        <th>Facebook</th>
-        <th>Quote</th>
-        <th>Personal site</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
+</div>
+</div>
+<table>
+  <tr>
+    <th class = "span2">Name</th>
+    <th>Bio</th>
+    <th>Newsfeed</th>
+    <th>Twitter</th>
+    <th>Facebook</th>
+    <th>Quote</th>
+    <th>Personal site</th>
+    <th></th>
+    <th></th>
+    <th></th>
+</tr>
 
-    <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.firstname %> <%= profile.lastname %></td>
-        <td><%= profile.bio %></td>
-        <td><%= profile.twitter %></td>
-        <td><%= profile.facebook %></td>
-        <td><%= profile.quote %></td>
-        <td><%= profile.personal_site %></td>
-        <td><%= link_to 'Show', profile,class: "btn btn btn-success" %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile), class: "btn btn btn-warning" %></td>
-        <td><%= link_to 'Destroy', profile,class: "btn btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    </table>
+<% @profiles.each do |profile| %>
+<tr>
+    <td><%= profile.firstname %> <%= profile.lastname %></td>
+    <td><%= profile.bio %></td>
+    <td><%= profile.twitter %></td>
+    <td><%= profile.facebook %></td>
+    <td><%= profile.quote %></td>
+    <td><%= profile.personal_site %></td>
+    <td><%= link_to 'Show', profile,class: "btn btn btn-success" %></td>
+    <td><%= link_to 'Edit', edit_profile_path(profile), class: "btn btn btn-warning" %></td>
+    <td><%= link_to 'Destroy', profile,class: "btn btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+<% end %>
+</table>
 
-    <br />
+<br />
 
-    <%= link_to 'New Profile', new_profile_path, class: "btn btn btn-success" %>
-    </div>
+<%= link_to 'New Profile', new_profile_path, class: "btn btn btn-success" %>
+</div>

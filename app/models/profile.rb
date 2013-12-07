@@ -6,6 +6,10 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
+  searchable do
+    text :firstname, :lastname
+  end
+
   def full_name
     firstname + " " + lastname
   end

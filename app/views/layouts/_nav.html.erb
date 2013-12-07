@@ -7,16 +7,16 @@
       <nav>
         <ul class="nav pull-right">
           <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Categories <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <% categories_nav %>
-                  <% @category.each do |category| %>
-                    <li><%= link_to "#{category.name}", category_path("#{category.id}")  %></li>
-                  <% end %>
-              </ul>
-            </li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              Categories <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% categories_nav %>
+              <% @category.each do |category| %>
+              <li><%= link_to "#{category.name}", category_path("#{category.id}")  %></li>
+              <% end %>
+            </ul>
+          </li>
 
           <li><p class="navbar-text pull-right">
            <% if user_signed_in? %>
