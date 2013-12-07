@@ -1,61 +1,50 @@
 <p id="notice"><%= notice %></p>
+<div> <!-- main div -->
+  <div> <!-- Part 1 -->
+    <div> <!-- first box -->
+      
+      <b>Name:</b> <%= @profile.full_name %>
+      <b>Image:</b>
+        <% if @profile.img%>
+         <%= image_tag(@profile.img, id: "prof_img")  %>
+         <% else %>
+         <%= image_tag(@profile.image_url(:thumb).to_s)  %>
+     <% end %>
 
-<p>
-  <b>Name:</b>
-  <%= @profile.firstname %> <%= @profile.lastname %>
-</p>
+     <%= link_to image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/twitter-icon.png"), "https://twitter.com/intent/follow?screen_name=#{@profile.firstname}#{@profile.lastname}" %>
+      <%= image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/facebook-icon.png") %>
+  
+  </div> <!-- first box -->
+  <div> <!-- second box -->
+    <p>
+      <b>Bio:</b>
+      <%= @profile.bio.html_safe %>
+    </p>
 
+    </div> <!-- second box -->
 
-<p>
-  <b>Image:</b>
-    <% if @profile.img%>
-     <%= image_tag(@profile.img, id: "prof_img")  %>
-     <% else %>
-     <%= image_tag(@profile.image_url(:thumb).to_s)  %>
- <% end %>
-</p>
+  </div> <!-- Part 1 -->
 
-<p>
-  <b>Bio:</b>
-  <%= @profile.bio.html_safe %>
-</p>
+  <div> <!-- part 2 -->  
+  
+    <b>Newsfeed:</b>
+    <br>
+      <% 4.times do |i| %>
+          <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
+      <% end %>
+  
+  </div> <!-- part 2 -->  
 
-<p>
-  <b>Newsfeed:</b>
-  <br>
-    <% 4.times do |i| %>
-        <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
-    <% end %>
-</p>
-
-<p>
-  <b>Twitter:</b>
-  <%= link_to image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/twitter-icon.png"), "https://twitter.com/intent/follow?screen_name=#{@profile.firstname}#{@profile.lastname}" %>
-<p>
-  <b>Facebook:</b>
-   <%= image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/facebook-icon.png") %>
-</p>
-
-<p>
-  <b>Quote:</b>
-  <%= @profile.quote %>
-</p>
-
-<p>
-  <b>Personal site:</b>
-  <%= @profile.personal_site %>
-</p>
-
-
-<h5>Tweets</h5>
-<ul>
-  <% @profile.tweets[0..4].each do |tweet| %>
-   <li><%= tweet.text %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-
-
-
-<%= render "/profiles/trend_data" %>
+  <div><!-- part 3 -->  
+    <h5>Tweets</h5>
+    <ul>
+      <% @profile.tweets[0..4].each do |tweet| %>
+       <li><%= tweet.text %></li>
+      <% end %>
+    </ul>
+  </div> <!-- part 3 -->
+  
+  <div><!-- part 4 -->   
+    <%= render "/profiles/trend_data" %>
+  </div>
+</div> <!-- main div -->
