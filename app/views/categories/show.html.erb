@@ -1,3 +1,15 @@
-<% @profiles.each do |profile| %>
-	<%= link_to "#{profile.firstname}", profile_path("#{profile.id}")  %>
-<% end %>
+<div class = "container">
+    <h1>Listing </h1>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+
+    <ul class="users">
+     <% @profiles.each do |profile| %>
+     <li> <%= link_to "#{profile.firstname}", profile_path("#{profile.id}")  %></li>
+     <% end %>
+    </div>
+  </div>
+</div>
+
+
