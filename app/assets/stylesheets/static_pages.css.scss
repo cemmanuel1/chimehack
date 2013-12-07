@@ -8,11 +8,12 @@
     -------------------------------------------------- */
 
     /* Carousel base class */
+   /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
     .carousel {
-      margin-bottom: 10px;
-      margin-top: -15px;
-      width: 150%;
-      margin-left: -250px;
+      margin-bottom: 60px;
     }
 
     .carousel .container {
@@ -58,4 +59,3 @@
     .carousel-caption .btn {
       margin-top: 10px;
     }
-    
