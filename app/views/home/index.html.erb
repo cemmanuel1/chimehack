@@ -1,43 +1,65 @@
 <div class = "container-fluid">
    <!-- Carousel
-    ================================================== --> 
+   ================================================== -->
 
-    <div id="myCarousel" class="carousel slide">
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="assets/love.png" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <!-- <h1>Example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
+   <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="assets/love.png" alt="">
+        <div class="container">
+          <div class="carousel-caption">
+            <div class="work">
+              <h1>Women 2 Watch</h1>
+              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
               <!-- <a class="btn btn-large btn-primary" href="#">Sign up today</a> -->
               <% if !current_user %>
-                <%# link_to "profile", new_profile_path, class: "btn btn-large btn-primary" %>
+              <%# link_to "profile", new_profile_path, class: "btn btn-large btn-primary" %>
               <%# else %>
-                <%= link_to "Join Us", new_user_session_path, class: "btn btn-large btn-primary" %>
+              <%= link_to "Join Us", new_user_session_path, class: "btn btn-large btn-primary" %>
+              <% end %>
+              <br>
+              <br>        <%= form_tag profiles_path, :method => :get do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Find a Women to Watch", :class => "input-large search-query" %>
               <% end %>
             </div>
           </div>
         </div>
-        <div class="item">
-          <img src="assets/sandberg-cover2.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+      </div>
+
+      <div class="item">
+        <img src="assets/sandberg-cover2.jpg" alt="">
+        <div class="container">
+          <div class="carousel-caption">
+                  <div class="work">
+            <h1>Sheryl Sandberg</h1>
+            <p class="lead">"I want to tell any young girl out there who's a geek, I was a really serious geek in high school. It works out. Study harder.
+              "</p>
+              <a class="btn btn-large btn-primary" href="profiles/1">Learn More</a>
+              <br>
+              <br>
+              <%= form_tag profiles_path, :method => :get do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Find a Women to Watch", :class => "input-large search-query" %>
+              <% end %>
             </div>
           </div>
+          </div>
         </div>
-         <div class="item">
+        <div class="item">
           <img src="assets/marissamayer2.jpg" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
+                    <div class="work">
+              <h1>Marissa Mayer</h1>
+              <p class="lead">"I always did something I was a little not ready to do. I think that's how you grow. When there's that moment of 'Wow, I'm not really sure I can do this,' and you push through those moments, that's when you have a breakthrough."</p>
+              <a class="btn btn-large btn-primary" href="profiles/2">Learn More</a>
+              <br>
+              <br>
+              <%= form_tag profiles_path, :method => :get do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Find a Women to Watch", :class => "input-large search-query" %>
+              <% end %>
             </div>
           </div>
+        </div>
         </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -105,4 +127,4 @@
       <hr class="featurette-divider">
 
       <!-- /END THE FEATURETTES -->
-</div>
+    </div>
