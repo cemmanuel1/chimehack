@@ -1,22 +1,18 @@
-<div class = "container">
-    <h1>Search Results</h1>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-</div>
-</div>
+<h1>Search Results</h1>
 <table>
   <tr>
     <% @profiles.each do |profile| %>
-    <th class = "span2"> <%= profile.firstname %> <%= profile.lastname %></th>
-</tr>
 
-<tr>
-    <td><%= image_tag(profile.img, id: "prof_img")  %></td>
-    <td><%= profile.bio.html_safe %></td>
-</tr>
-<% end %>
+    <th class = "span2"> <%= profile.firstname %> <%= profile.lastname %></th>
+  </tr>
+
+  <tr>
+    <td><%= link_to image_tag(profile.img, id: "prof_img"),profile_path("#{profile.id}")  %></td>
+    <td><%= profile.bio.html_safe %> </td>
+  </tr>
+
+  <% end %>
 </table>
 
-<br />
-</div>
+
