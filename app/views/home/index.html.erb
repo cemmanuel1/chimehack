@@ -1,20 +1,20 @@
-<div class = "box1">
+<!-- <div class = "box1"> -->
    <!-- Carousel
     ================================================== --> 
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
         <div class="item active">
-          <img src="assets/sandberg_with_oprah3.jpg" alt="">
+          <img src="assets/love.png" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <!-- <h1>Example headline.</h1>
+              <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
               <!-- <a class="btn btn-large btn-primary" href="#">Sign up today</a> -->
-              <%# if current_user %>
-                <%# link_to "Create Profile", new_profile_path, class: "btn btn-large btn-primary" %>
+              <% if !current_user %>
+                <%# link_to "profile", new_profile_path, class: "btn btn-large btn-primary" %>
               <%# else %>
-                <%# link_to "Create Account", new_user_session, class: "btn btn-large btn-primary" %>
-              <%# end %>
+                <%= link_to "Join Us", new_user_session_path, class: "btn btn-large btn-primary" %>
+              <% end %>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
       <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div><!-- /.carousel -->
 
-</div>
+<!-- </div> -->
 
 
     <!-- Marketing messaging and featurettes
