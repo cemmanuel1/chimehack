@@ -1,4 +1,6 @@
 Chimehack::Application.routes.draw do
+  get "landing_pages/home"
+
   resources :profiles
 
 
