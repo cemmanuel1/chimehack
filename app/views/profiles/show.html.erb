@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+
 <p>
   <b>Name:</b>
   <%= @profile.firstname %> <%= @profile.lastname %>
@@ -12,7 +13,10 @@
 
 <p>
   <b>Newsfeed:</b>
-  <%= @profile.newsfeed %>
+  <br>
+  <% 5.times do |i| %>
+    <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
+  <% end %>
 </p>
 
 <p>
@@ -36,7 +40,9 @@
 </p>
 
 
+
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+
+
 
 <%= render "/profiles/trend_data" %>

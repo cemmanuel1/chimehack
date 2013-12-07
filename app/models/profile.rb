@@ -1,12 +1,8 @@
 class Profile < ActiveRecord::Base
+
   attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category, :category_id
   belongs_to :user
   belongs_to :category
-
-
-  def self.fetch_news
-    JSON.parse(RestClient.get('http://content.guardianapis.com/search', params: { q: 'Sandberg',key: 'dk3gqxdpr3g3hsbya3gg8p3h'} ))
-  end
 
   def fetch_wiki(firstname, lastname)
     JSON.parse(RestClient.get('http://en.wikipedia.org/w/api.php', params: {action: 'query', format: "json", prop: "extracts", exintro: true, titles: firstname + " " + lastname} ))
@@ -20,6 +16,11 @@ class Profile < ActiveRecord::Base
       profile.update_attributes(bio:  wiki["query"]["pages"][wiki_page_id]["extract"])
       profile.save!
     end
+  end
+
+
+  def self.fetch_news(firstname,lastname)
+    JSON.parse(RestClient.get('http://content.guardianapis.com/search', params: { q: firstname + " " + lastname, key: 'dk3gqxdpr3g3hsbya3gg8p3h'} ))
   end
 
 end
