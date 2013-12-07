@@ -10,6 +10,7 @@ gem 'activeadmin'
 gem 'sunspot_rails'
 gem  "wikipedia-client"
 gem 'devise'
+gem 'twitter'
 
 group :development do
   gem 'better_errors'
