@@ -14,9 +14,9 @@
 <p>
   <b>Newsfeed:</b>
   <br>
-  <% 5.times do |i| %>
-    <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
-  <% end %>
+    <% 5.times do |i| %>
+      <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
+    <% end %>
 </p>
 
 <p>
