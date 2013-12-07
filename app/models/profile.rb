@@ -1,5 +1,7 @@
 class Profile < ActiveRecord::Base
-  attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname
+  attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category_id
+  belongs_to :user
+  belongs_to :category
 
   def concat_name
     firstname + " " + lastname
@@ -14,6 +16,4 @@ class Profile < ActiveRecord::Base
   wiki_page_id = wiki["query"]["pages"].first[0]
   bio =  wiki["query"]["pages"][wiki_page_id]["extract"]
   end
-
-
 end
