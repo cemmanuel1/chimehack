@@ -1,19 +1,20 @@
 <div class = "container">
     <h1>Discover Women In <%= @category.name %></h1>
 
+
+
 <div class="container-fluid">
   <div class="row-fluid">
 
     <ul class="users">
      <% @profiles.each do |profile| %>
 
-	     	 <div class="page-header"> <%= profile.firstname %><%= profile.lastname %>
+	     	 <div class="page-header"> <%= profile.firstname %> <%= profile.lastname %>
 					<small>
-						<%= truncate (profile.bio), :length => 80 %>
+						<%= truncate (profile.bio), :length => 200 %>
 						<%= link_to "more", profile_path(profile.id) %>
 					</small>
 				</div>
-
      <% end %>
     </div>
   </div>

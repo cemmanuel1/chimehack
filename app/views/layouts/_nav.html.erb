@@ -15,6 +15,13 @@
               <% @category.each do |category| %>
               <li><%= link_to "#{category.name}", category_path("#{category.id}")  %></li>
               <% end %>
+              <li>
+                <%= form_tag profiles_path, :method => :get do %>
+                <p>
+                  <%= text_field_tag :search, params[:search], placeholder: "search" %>
+                </p>
+                <% end %>
+              </li>
             </ul>
           </li>
 

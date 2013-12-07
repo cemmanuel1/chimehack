@@ -7,7 +7,8 @@ class Profile < ActiveRecord::Base
   belongs_to :category
 
   searchable do
-    text :firstname, :lastname
+    text :firstname
+    text :lastname
   end
 
   def full_name
