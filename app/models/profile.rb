@@ -1,6 +1,8 @@
+require 'wikipedia'
+
 class Profile < ActiveRecord::Base
 
-  attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category, :category_id
+  attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category, :category_id, :img
   belongs_to :user
   belongs_to :category
 
@@ -22,6 +24,15 @@ class Profile < ActiveRecord::Base
     end
   end
 
+  def self.make_image
+    profiles = Profile.all
+    profiles.each do |profile|
+      page = Wikipedia.find( profile.firstname + " " + profile.lastname )
+      image = page.image_urls.first
+      profile.update_attributes(img: image)
+      profile.save!
+    end
+  end
 
   def fetch_news
     JSON.parse(RestClient.get('http://content.guardianapis.com/search', params: { q: full_name, key: 'dk3gqxdpr3g3hsbya3gg8p3h'} ))

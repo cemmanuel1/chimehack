@@ -21,4 +21,6 @@ CSV.foreach("women.csv", headers: true) do |row|
 end
 
 Profile.make_bio
+Profile.make_image
+
 

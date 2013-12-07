@@ -6,6 +6,14 @@
   <%= @profile.firstname %> <%= @profile.lastname %>
 </p>
 
+
+<p>
+  <b>Image:</b>
+    <% if @profile.img%>
+ <%= image_tag(@profile.img, id: "prof_img")  %>
+ <% end %>
+</p>
+
 <p>
   <b>Bio:</b>
   <%= @profile.bio.html_safe %>
