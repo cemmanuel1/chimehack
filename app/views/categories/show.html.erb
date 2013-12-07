@@ -13,7 +13,7 @@
          </div>
 	     	 <div class="page-header"> <%= profile.firstname %><%= profile.lastname %>
 					<small>
-						<%= truncate (profile.bio), :length => 100 %>
+						<%= profile.bio.html_safe%>
 						<%= link_to "more", profile_path(profile.id) %>
 					</small>
 				</div>
