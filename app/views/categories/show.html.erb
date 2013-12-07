@@ -1,25 +1,22 @@
-<div class = "container">
-    <h1>Discover Women In <%= @category.name %></h1>
+
+  <h1>Discover Women In <%= @category.name %></h1>
+
+      <table>
+        <tr>
+          <% @profiles.each do |profile| %>
+
+          <th class = "span2"> <%= profile.firstname %> <%= profile.lastname %></th>
+        </tr>
+
+        <tr>
+          <td><%= link_to image_tag(profile.img, id: "prof_img"),profile_path("#{profile.id}")  %></td>
+          <td><%= profile.bio.html_safe %> </td>
+        </tr>
+
+        <% end %>
+      </table>
 
 
 
-<div class="container-fluid">
-  <div class="row-fluid">
-    <ul class="users">
-     <% @profiles.each do |profile| %>
-
-        <div class= "small-image">
-         <p> image-block </p>
-         </div>
-	     	 <div class="page-header"> <%= profile.firstname %><%= profile.lastname %>
-					<small>
-						<%= truncate (profile.bio), :length => 100 %>
-						<%= link_to "more", profile_path(profile.id) %>
-					</small>
-				</div>
-     <% end %>
-    </div>
-  </div>
-</div>
 
 
