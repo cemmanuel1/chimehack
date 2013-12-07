@@ -11,18 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20131206232627) do
-
+ActiveRecord::Schema.define(:version => 20131206233217) do
 
   create_table "categories", :force => true do |t|
     t.string "name"
   end
 
-
   create_table "profiles", :force => true do |t|
     t.string   "name"
-    t.string   "bio"
+    t.text     "bio"
     t.string   "newsfeed"
     t.string   "twitter"
     t.string   "facebook"
