@@ -20,7 +20,7 @@
 
 <p>
   <b>Twitter:</b>
-  <%= @profile.twitter %>
+  <%= link_to "@" + @profile.firstname + @profile.lastname, "http://twitter.com/#{@profile.firstname}#{@profile.lastname}" %>
 </p>
 
 <p>
