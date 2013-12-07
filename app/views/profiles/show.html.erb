@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div> <!-- main div -->
-  <div> <!-- Part 1 -->
-    <div> <!-- first box -->
-      
-      <b>Name:</b> <%= @profile.full_name %>
-      <b>Image:</b>
+  <div class='row'> <!-- Part 1 -->
+
+    <div class="span4 thumbnail col-sm-6 col-md-4"> <!-- first box -->
+      <div class='caption'>
+      <%= @profile.full_name %>
+      </div>
         <% if @profile.img%>
          <%= image_tag(@profile.img, id: "prof_img")  %>
          <% else %>
@@ -15,7 +16,7 @@
       <%= image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/facebook-icon.png") %>
   
   </div> <!-- first box -->
-  <div> <!-- second box -->
+  <div class='span8'> <!-- second box -->
     <p>
       <b>Bio:</b>
       <%= @profile.bio.html_safe %>
@@ -25,26 +26,42 @@
 
   </div> <!-- Part 1 -->
 
-  <div> <!-- part 2 -->  
-  
+  <div class="row"> <!-- part 2 -->  
+    <div class='span11'>
     <b>Newsfeed:</b>
     <br>
       <% 4.times do |i| %>
           <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
       <% end %>
-  
+    </div>
   </div> <!-- part 2 -->  
 
-  <div><!-- part 3 -->  
-    <h5>Tweets</h5>
-    <ul>
-      <% @profile.tweets[0..4].each do |tweet| %>
-       <li><%= tweet.text %></li>
+  <div class='row'><!-- part 3 -->  
+
+    <div class='span4'> <!-- tweets -->
+      <h5>Tweets</h5>
+      <ul>
+        <% @profile.tweets[0..4].each do |tweet| %>
+         <li><%= tweet.text %></li>
+        <% end %>
+      </ul>
+    </div> <!-- tweets -->
+
+    <div class='span4'> <!-- youtube --> 
+      <% if @profile.video %>
+      <%=  render "/profiles/video"  %>
       <% end %>
-    </ul>
+    </div> <!-- youtube --> 
+
   </div> <!-- part 3 -->
   
-  <div><!-- part 4 -->   
+  <div class='row'> <!-- part 4 -->   
+    <div>
     <%= render "/profiles/trend_data" %>
+    </div>
   </div>
 </div> <!-- main div -->
+
+
+ 
+

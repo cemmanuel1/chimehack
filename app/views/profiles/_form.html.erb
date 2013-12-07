@@ -12,7 +12,7 @@
   <% end %>
 <div class="row container">
   <div class="row">
-    <div class="span_6">
+    <div class="span_8">
       <%= f.label :first_Name %>
       <%= f.text_field :firstname %>
       <%= f.label :last_Name %>
@@ -28,8 +28,10 @@
       <%= f.text_field :quote %>
       <%= f.label :personal_site %>
       <%= f.text_field :personal_site %>
+      <%= f.label :video %>
+      <%= f.text_area :video, {:cols => 15, :rows => 2} %>
     </div>
-    <div class="span_6">
+    <div class="span_4">
       <%= f.label :bio %>
       <%= f.text_area :bio, {:cols => 15, :rows => 10} %>
        <%= f.file_field :image %><br />

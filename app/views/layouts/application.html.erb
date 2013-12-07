@@ -14,19 +14,12 @@
    <%= render 'layouts/shim' %>
 </head>
   <body>
-    <!-- follow button for feisbuc -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) { 
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=265419103556027";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
+
+    <div class ="container-fluid">
+    
 
   	  <%= render 'layouts/nav' %>
-      <div class="container">
+     
          <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
       <% end %>
@@ -34,8 +27,7 @@
       <p class="alert alert-error"><%= alert %></p>
       <% end %>
         <%= yield %>
-
      <%= render 'layouts/footer' %>
-   </div>
+</div>
   </body>
 </html>
