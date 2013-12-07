@@ -4,13 +4,10 @@
 <div class="container-fluid">
   <div class="row-fluid">
 
-
-    <div class="span10">
+    <ul class="users">
      <% @profiles.each do |profile| %>
-      <%= link_to "#{profile.firstname}", profile_path("#{profile.id}")  %>
+     <li> <%= link_to "#{profile.firstname}", profile_path("#{profile.id}")  %></li>
      <% end %>
-        <a href="#">next </a>.
-       </p>
     </div>
   </div>
 </div>
