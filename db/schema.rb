@@ -14,7 +14,8 @@
 ActiveRecord::Schema.define(:version => 20131206233217) do
 
   create_table "categories", :force => true do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "profile_id"
   end
 
   create_table "profiles", :force => true do |t|

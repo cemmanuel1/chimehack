@@ -19,5 +19,6 @@ Category.create(name: "Media")
 CSV.foreach("women.csv", headers: true) do |row|
 	Profile.create(firstname: row.field("first_name"), lastname: row.field("last_name"), category_id: row.field("category_id") )
 end
- 
+
+Profile.make_bio
 
