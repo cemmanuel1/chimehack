@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20131206233217) do
     t.string   "name"
     t.text     "bio"
     t.string   "newsfeed"
+    t.string   "img"
     t.string   "twitter"
     t.string   "facebook"
     t.string   "quote"
