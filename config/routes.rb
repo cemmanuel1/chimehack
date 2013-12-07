@@ -1,6 +1,8 @@
 Chimehack::Application.routes.draw do
-  resources :profiles
+  get "landing_pages/home"
 
+  resources :profiles
+  resources :categories
 
   # devise_for :users
   devise_for :users
