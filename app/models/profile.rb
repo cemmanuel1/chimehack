@@ -1,5 +1,5 @@
 class Profile < ActiveRecord::Base
-  attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category_id
+  attr_accessible :bio, :facebook, :name, :newsfeed, :personal_site, :quote, :twitter, :firstname, :lastname, :category, :category_id
   belongs_to :user
   belongs_to :category
 
@@ -16,4 +16,9 @@ class Profile < ActiveRecord::Base
   wiki_page_id = wiki["query"]["pages"].first[0]
   bio =  wiki["query"]["pages"][wiki_page_id]["extract"]
   end
+
+  def self.fetch_news
+    JSON.parse(RestClient.get('http://content.guardianapis.com/search', params: { q: 'Sandberg',key: 'dk3gqxdpr3g3hsbya3gg8p3h'} ))
+  end
+
 end
