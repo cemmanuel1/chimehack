@@ -3,13 +3,15 @@
 
 <p>
   <b>Name:</b>
-  <%= @profile.firstname %> <%= @profile.firstname %>
+  <%= @profile.firstname %> <%= @profile.lastname %>
 </p>
 
 
 <p>
   <b>Image:</b>
- <%= image_tag(@profile.img) %>
+    <% if @profile.img%>
+ <%= image_tag(@profile.img, id: "prof_img")  %>
+ <% end %>
 </p>
 
 <p>
