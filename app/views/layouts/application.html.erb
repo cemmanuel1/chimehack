@@ -5,13 +5,20 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+   <%= render 'layouts/shim' %>
 </head>
-<body>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
-	 <%= render "/layouts/nav" %>
+  <body>
+  	  <%= render 'layouts/nav' %>
+      <div class="container">
+         <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+        <%= yield %>
 
-<%= yield %>
-
-</body>
+     <%= render 'layouts/footer' %>
+   </div>
+  </body>
 </html>
