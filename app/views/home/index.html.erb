@@ -3,30 +3,35 @@
  <div id="myCarousel" class="carousel slide">
   <div class="carousel-inner">
     <div class="item active">
-      <img src="assets/love.png" class="img-responsive" alt="Responsive image">
+  
+      <img src="assets/sandberg-cover2.jpg" class="img-responsive text-center" alt="">
+
       <div class="container">
         <div class="carousel-caption">
+        </br>
+        <br />
           <div class="work">
-            <h1>Women 2 Watch</h1>
-            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
+            <!-- <h1>Sheryl Sandberg</h1> -->
+            <p class="lead">"I want to tell any young girl out there who's a geek, I was a really serious geek in high school. It works out. Study harder." - Sheryl Sandberg
+           </div>
+           <div class="span12">
             <!-- <a class="btn btn-large btn-primary" href="#">Sign up today</a> -->
-            <% if !current_user %>
-            <%# link_to "profile", new_profile_path, class: "btn btn-large btn-primary" %>
-            <%# else %>
-            <%= link_to "Join Us", new_user_session_path, class: "btn btn-large btn-primary" %>
-            <% end %>
-            <br>
-            <br>        <%= form_tag profiles_path, :method => :get do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Find a Women to Watch", :class => "input-large search-query" %>
-            <% end %>
-          </div>
+              <% if !current_user %>
+              <%# link_to "profile", new_profile_path, class: "btn btn-large btn-primary" %>
+              <%# else %>
+              <%= link_to "Join Us", new_user_session_path, class: "btn-xlarge kiss" %>
+              <% end %>
+              <%= form_tag profiles_path, :method => :get do %>
+              <%= text_field_tag :search, params[:search], placeholder: "Find a Women to Watch", :class => "love" %>
+              <% end %>
+            </div>
+      
         </div>
       </div>
-    </div>
+   <!--  </div> -->
 
     <div class="item">
-      <img src="assets/sandberg-cover2.jpg" class="img-responsive" alt="Responsive image">
+      <img src="assets/sandberg-cover2.jpg" class="img-responsive" alt="">
       <div class="container">
         <div class="carousel-caption">
           <div class="work">
@@ -45,7 +50,7 @@
       </div>
 
       <div class="item">
-        <img src="assets/marissamayer2.jpg" class="img-responsive" alt="Responsive image">
+        <img src="assets/marissamayer2.jpg" class="img-responsive" alt="">
 
         <div class="container">
           <div class="carousel-caption">
@@ -81,52 +86,24 @@
       <div class="row">
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <h2>Sheryl Sandberg</h2>
+          <p>"I wish I could just go tell all the young women I work with, all these fabulous women, 'Believe in yourself and negotiate for yourself. Own your own success.' I wish I could tell that to my daughter. But it's not that simple."</p>
+          <p><a class="btn" href="profiles/1">View details &raquo;</a></p>
         </div><!-- /.span4 -->
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <h2>Marissa Mayer</h2>
+          <p>"I always did something I was a little not ready to do. I think that's how you grow. When there's that moment of 'Wow, I'm not really sure I can do this,' and you push through those moments, that's when you have a breakthrough."</p>
+          <p><a class="btn" href="profiles/2">View details &raquo;</a></p>
         </div><!-- /.span4 -->
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn" href="#">View details &raquo;</a></p>
+          <h2>Somaly Mam</h2>
+          <p>“What you have learned from experience is worth much more than gold. If you have a house it may burn down. Any kind of possession can be lost, but your experience is yours forever. Keep it and find a way to use it.” </p>
+          <p><a class="btn" href="profiles/15">View details &raquo;</a></p>
         </div><!-- /.span4 -->
       </div><!-- /.row -->
 </div>
 
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <img class="featurette-image pull-right" src="../assets/img/examples/browser-icon-chrome.png">
-        <h2 class="featurette-heading">First featurette headling. <span class="muted">It'll blow your mind.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <img class="featurette-image pull-left" src="../assets/img/examples/browser-icon-firefox.png">
-        <h2 class="featurette-heading">Oh yeah, it's that good. <span class="muted">See for yourself.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="featurette">
-        <img class="featurette-image pull-right" src="../assets/img/examples/browser-icon-safari.png">
-        <h2 class="featurette-heading">And lastly, this one. <span class="muted">Checkmate.</span></h2>
-        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
+     
     </div>
