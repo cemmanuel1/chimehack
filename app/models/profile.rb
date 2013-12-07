@@ -3,7 +3,7 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
-  def concat_name
+  def concat_name(firstname,lastname)
     firstname + " " + lastname
   end
 
@@ -16,13 +16,12 @@ class Profile < ActiveRecord::Base
     bio =  wiki["query"]["pages"][wiki_page_id]["extract"]
   end
 
-  def self.fetch_news
-    JSON.parse(RestClient.get('http://content.guardianapis.com/search', params: { q: 'Sandberg',key: 'dk3gqxdpr3g3hsbya3gg8p3h'} ))
+  def fetch_news(name)
+    JSON.parse(RestClient.get('http://content.guardianapis.com/search', params: { q: name ,key: 'dk3gqxdpr3g3hsbya3gg8p3h'} ))
   end
 
   def get_news
-    # @profile.contact_name
-    # Profile.fetch_news()
+    Profile.fetch_news(@profile.concat_name)
   end
 
 end
