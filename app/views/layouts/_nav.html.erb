@@ -7,12 +7,24 @@
       <nav>
         <ul class="nav pull-right">
           <li id="fat-menu" class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Categories <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <% @category.each do |category| %>
-              <li><%= link_to "#{category.name}", category_path("#{category.id}")  %></li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Categories <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <% categories_nav %>
+                  <% @category.each do |category| %>
+                    <li><%= link_to "#{category.name}", category_path("#{category.id}")  %></li>
+                  <% end %>
+              </ul>
+            </li>
+          <li><p class="navbar-text pull-right">
+             <% if user_signed_in? %>
+                Logged in as <strong><%= current_user.email %></strong>.
+                <%= link_to 'Edit profile', edit_user_registration_path %> |
+                <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+              <% else %>
+                <%= link_to "Sign up", new_user_registration_path %> |
+                <%= link_to "Login", new_user_session_path %>
               <% end %>
             </ul>
           </li>
