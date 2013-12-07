@@ -10,40 +10,30 @@
       </ul>
     </div>
   <% end %>
+<div class="row container">
+  <div class="row">
+    <div class="span_6">
+      <%= f.label :first_Name %>
+      <%= f.text_field :firstname %>
+      <%= f.label :last_Name %>
+      <%= f.text_field :lastname %>
 
-  <div class="field">
-    <%= f.label :first_Name %><br />
-    <%= f.text_field :firstname %>
+      <%= f.label :newsfeed %>
+      <%= f.text_field :newsfeed %>
+      <%= f.label :twitter %>
+      <%= f.text_field :twitter %>
+      <%= f.label :facebook %>
+      <%= f.text_field :facebook %>
+      <%= f.label :quote %>
+      <%= f.text_field :quote %>
+      <%= f.label :personal_site %>
+      <%= f.text_field :personal_site %>
+    </div>
+    <div class="span_6">
+      <%= f.label :bio %>
+      <%= f.text_area :bio, {:cols => 15, :rows => 10} %><br />
+      <%= f.submit "create", class: "btn" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :last_Name %><br />
-    <%= f.text_field :lastname %>
-  </div>
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_field :bio %>
-  </div>
-  <div class="field">
-    <%= f.label :newsfeed %><br />
-    <%= f.text_field :newsfeed %>
-  </div>
-  <div class="field">
-    <%= f.label :twitter %><br />
-    <%= f.text_field :twitter %>
-  </div>
-  <div class="field">
-    <%= f.label :facebook %><br />
-    <%= f.text_field :facebook %>
-  </div>
-  <div class="field">
-    <%= f.label :quote %><br />
-    <%= f.text_field :quote %>
-  </div>
-  <div class="field">
-    <%= f.label :personal_site %><br />
-    <%= f.text_field :personal_site %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>

@@ -2,7 +2,7 @@ class CreateProfiles < ActiveRecord::Migration
   def change
     create_table :profiles do |t|
       t.string :name
-      t.string :bio
+      t.text :bio
       t.string :newsfeed
       t.string :twitter
       t.string :facebook
