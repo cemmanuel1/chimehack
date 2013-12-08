@@ -1,4 +1,4 @@
-# Techwomen.us
+# Women 2 Watch
 
 #### Description
 Created during the 2 day #Chimehack to support the need of NGO Vital Voices.
@@ -23,8 +23,6 @@ Profile data is dynamically aggregated from Wikipedia, Guardian, Twitter, Youtub
 ##### Here is a screenshot of the site
 
 ![Image](https://s3-us-west-1.amazonaws.com/women2watch/Screen+Shot+2013-12-07+at+4.12.37+PM.png)
-
-![image] (https://s3-us-west-1.amazonaws.com/women2watch/Screen+Shot+2013-12-07+at+4.14.00+PM.png)
 
 ![image] (https://s3-us-west-1.amazonaws.com/women2watch/Screen+Shot+2013-12-07+at+4.16.06+PM.png)
 
