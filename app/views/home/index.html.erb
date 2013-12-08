@@ -19,7 +19,7 @@
               <% if !current_user %>
               <%# link_to "profile", new_profile_path, class: "btn btn-large btn-primary" %>
               <%# else %>
-              <%= link_to "Join Us", new_user_registration_path, class: "btn-xlarge kiss" %>
+              <%= link_to "Join Us", new_user_registration_path, class: "btn-xlarge  btn-success kiss" %>
               <% end %>
               <%= form_tag profiles_path, :method => :get do %>
               <%= text_field_tag :search, params[:search], placeholder: "Find a Women to Watch", :class => "love" %>
