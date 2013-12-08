@@ -15,32 +15,22 @@
   <script src="https://platform.twitter.com/widgets.js"></script>
    <%= render 'layouts/shim' %>
 </head>
-  <body>
+  <body bgcolor="#EFEFEF">
 
     <div class ="container-fluid">
-    <!-- follow button for feisbuc -->
-      <div id="fb-root"></div>
-        <script>(function(d, s, id) { 
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=265419103556027";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));
-        </script>
-      </div>
 
-    	  <%= render 'layouts/nav' %>
-       
-           <% if notice %>
-        <p class="alert alert-notice"><%= notice %></p>
-        <% end %>
-        <% if alert %>
-        <p class="alert alert-error"><%= alert %></p>
-        <% end %>
-          <%= yield %>
 
-     <%= render 'layouts/footer' %> 
+  	  <%= render 'layouts/nav' %>
+     
+         <% if notice %>
+      <p class="alert alert-notice"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+      <p class="alert alert-error"><%= alert %></p>
+      <% end %>
+        <%= yield %>
+     <%= render 'layouts/footer' %>
+
    </div>
   </body>
 </html>

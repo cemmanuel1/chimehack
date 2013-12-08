@@ -1,18 +1,18 @@
 
 <% if @profile %>
-	<div class="row">
-			<div class="span_4">
-		 <h4><div class="page-header">Global Interest Since 2004</div></h4>
-			<script type="text/javascript" src='//www.google.com/trends/embed.js?hl=en-US&q=<%=escape_javascript @profile.firstname %>+<%=escape_javascript @profile.lastname %>&content=1&cid=GEO_MAP_0_0&export=5&w=400&h=430'></script>
-			</div>
-  <div class="span_4">
-		<h4><div class="page-header">Search Interest Since 2004</div></h4>
+<div class="row">
+	<div class="span_4">
+		<h4><div class="page-header">Global Interest</div></h4>
+		<script type="text/javascript" src='//www.google.com/trends/embed.js?hl=en-US&q=<%=escape_javascript @profile.firstname %>+<%=escape_javascript @profile.lastname %>&content=1&cid=GEO_MAP_0_0&export=5&w=400&h=430'></script>
+	</div>
+	<div class="span_4">
+		<h4><div class="page-header">Search Interest</div></h4>
 		<script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=<%=escape_javascript @profile.firstname %>+<%=escape_javascript @profile.lastname %>&content=1&cid=TIMESERIES_GRAPH_0&export=5&w=400&h=330"></script>
 	</div>
-		<div class="span_4">
-		<h4><div class="page-header">Top Searches Since 2004</div></h4>
-		 <script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=<%=escape_javascript @profile.firstname %>+<%=escape_javascript @profile.lastname %>&content=1&cid=TOP_QUERIES_0_0&export=5&w=300&h=420"></script>
-		</div>
+	<div class="span_4">
+		<h4><div class="page-header">Top Searches</div></h4>
+		<script type="text/javascript" src="//www.google.com/trends/embed.js?hl=en-US&q=<%=escape_javascript @profile.firstname %>+<%=escape_javascript @profile.lastname %>&content=1&cid=TOP_QUERIES_0_0&export=5&w=300&h=420"></script>
 	</div>
+</div>
 <% end %>
 

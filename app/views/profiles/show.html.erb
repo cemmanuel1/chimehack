@@ -1,65 +1,74 @@
 <p id="notice"><%= notice %></p>
+<div> <!-- main div -->
+  <div class='row profile'> <!-- Part 1 -->
 
-<p>
-  <b>Name:</b>
-  <%= @profile.firstname %> <%= @profile.lastname %>
-</p>
+    <div class="span4 thumbnail col-sm-6 col-md-4"> <!-- first box -->
+      <div class='thumbnail'>
+        <% if @profile.img%>
+         <%= image_tag(@profile.img, id: "prof_img")  %>
+         <% else %>
+         <%= image_tag(@profile.image_url(:thumb).to_s)  %>
+     <% end %>
+     </div>
+     <div>
+     <span class='social'>
+     <%= link_to image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/32/twitter-icon.png"), "https://twitter.com/intent/follow?screen_name=#{@profile.firstname}#{@profile.lastname}" %>
+     </span>
+     <span class='social'>
+      <%= image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/32/facebook-icon.png") %>
+      </span>
+    </div>
+  </div> <!-- first box -->
+  <div class='span8'> <!-- second box -->
+    <h1><%= @profile.full_name %></h1>
+    <h4>Biography:</h4>
+    <p><%= @profile.bio.html_safe %></p>
 
+    </div> <!-- second box -->
 
-<p>
-  <b>Image:</b>
-    <% if @profile.img%>
-     <%= image_tag(@profile.img, id: "prof_img")  %>
-     <% else %>
-     <%= image_tag(@profile.image_url(:thumb).to_s)  %>
- <% end %>
-</p>
-
-<p>
-  <b>Bio:</b>
-  <%= @profile.bio.html_safe %>
-</p>
-
-<p>
-  <b>Newsfeed:</b>
-  <br>
-    <% 4.times do |i| %>
-        <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
-    <% end %>
-</p>
-
- <% if @profile.video %>
-     <%=  render "/profiles/video"  %>
- <% end %>
-
-<p>
-  <b>Twitter:</b>
-  <%= link_to image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/twitter-icon.png"), "https://twitter.com/intent/follow?screen_name=#{@profile.firstname}#{@profile.lastname}" %>
-<p>
-  <b>Facebook:</b>
-   <%= image_tag("http://icons.iconarchive.com/icons/minisoft.es/so-smooth-social/64/facebook-icon.png") %>
-</p>
-
-<p>
-  <b>Quote:</b>
-  <%= @profile.quote %>
-</p>
-
-<p>
-  <b>Personal site:</b>
-  <%= @profile.personal_site %>
-</p>
-
-
-<h5>Tweets</h5>
-<ul>
-  <% @profile.tweets[0..4].each do |tweet| %>
-   <li><%= tweet.text %></li>
-  <% end %>
-</ul>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
+  </div> <!-- Part 1 -->
 
 
 
-<%= render "/profiles/trend_data" %>
+  <div class="row profile"> <!-- part 2 -->  
+    <div class='span11'>
+      <h4>Latest news for <%= @profile.firstname %>:</h4>
+      <br>
+      <% 4.times do |i| %>
+       <p>
+          <%= link_to @news['response']['results'][i]['webTitle'], @news['response']['results'][i]['webUrl'] %><br>
+        </p>
+      <% end %>
+    </div>
+  </div> <!-- part 2 -->  
+
+  <div class='row profile'><!-- part 3 -->  
+
+    <div class='span6'> <!-- tweets -->
+      <h4>Latest tweets</h4>
+      <ul class='list-group'>
+        <% @profile.tweets[0..4].each do |tweet| %>
+         <li class='list-group-item'><%= tweet.text %></li>
+        <% end %>
+      </ul>
+    </div> <!-- tweets -->
+
+    <div class='span6'> <!-- youtube --> 
+      <h4>Latest videos</h4>
+      <% if @profile.video %>
+      <%=  render "/profiles/video"  %>
+      <% end %>
+    </div> <!-- youtube --> 
+
+  </div> <!-- part 3 -->
+  
+  <div class='row profile'> <!-- part 4 -->   
+    <div>
+    <%= render "/profiles/trend_data" %>
+    </div>
+  </div>
+</div> <!-- main div -->
+
+
+ 
+
