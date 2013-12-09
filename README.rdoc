@@ -1,3 +1,0 @@
-# An app that is being developed  for the Chime for Change Hackaton
-
-##Status: Work in Progress
